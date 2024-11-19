@@ -48,12 +48,32 @@ extension ViewController: UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toDetail" {
             let detailVC = segue.destination as! DetailViewController
-            let indexPath = sender as! IndexPath
             
-            detailVC.member = memberListManager.getMembersList()[indexPath.row]
+            // ⭐️스토리보드내 세그웨이 2개 -> 분기처리
+            if let _ = sender as? UIBarButtonItem {
+                detailVC.member = nil
+            } else if let indexPath = sender as? IndexPath {
+                detailVC.member = memberListManager.getMembersList()[indexPath.row]
+            }
+            
+            detailVC.delegate = self
         }
     }
     
+}
+
+extension ViewController: MemberDelegate {
+    
+    func addNewMember(_ member: Member) {
+        memberListManager.appendMember(member)
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
 }

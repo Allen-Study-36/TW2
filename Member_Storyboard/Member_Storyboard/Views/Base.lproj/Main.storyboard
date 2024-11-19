@@ -87,13 +87,13 @@
                     <navigationItem key="navigationItem" title="멤버리스트" id="Xka-rd-Zuc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2OG-MK-fpz">
                             <connections>
-                                <segue destination="jFl-bz-vpf" kind="push" id="VzP-Af-GhB"/>
+                                <segue destination="jFl-bz-vpf" kind="show" identifier="toDetail" id="VzP-Af-GhB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="dKQ-qj-dCt" id="X9V-Rh-Ro3"/>
-                        <segue destination="jFl-bz-vpf" kind="push" identifier="toDetail" id="Y8v-qZ-fTQ"/>
+                        <segue destination="jFl-bz-vpf" kind="show" identifier="toDetail" id="Y8v-qZ-fTQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -268,6 +268,8 @@
                         <outlet property="nameTextField" destination="rbh-2L-nHz" id="KXF-lb-6a8"/>
                         <outlet property="phoneNumberTextField" destination="Mop-fM-yI4" id="IhX-z5-A3g"/>
                         <outlet property="saveButton" destination="7bh-dg-6bB" id="ehC-Ud-Ern"/>
+                        <outlet property="stackView" destination="iaF-ux-uE8" id="HGY-4A-a74"/>
+                        <outlet property="stackViewTopConstraint" destination="aof-G1-iFc" id="Dlp-Z5-fbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYf-dV-a7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
